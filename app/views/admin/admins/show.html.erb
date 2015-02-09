@@ -1,0 +1,14 @@
+<h1 class="page-header"><%= @admin.name %></h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @admin.email %>
+</p>
+
+<%= link_to 'Edit', edit_admin_admin_path(@admin), class: "btn btn-default" %> |
+<%= link_to 'Back', admin_admins_path, class: "btn btn-default" %>
