@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tekton Rails Bundle</title>
+		<%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'admin', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div id="wrapper" class="<%= 'full_wrapper' if !admin_user_signed_in? %>">
+			<%= render "admin/navbar" %>
+			<div id="page-wrapper">
+				<% if admin_user_signed_in? %>
+					<%= breadcrumbs style: :bootstrap %>
+				<% end %>
+				<%= render "admin/alerts" %>
+				<%= yield %>
+			</div>
+		</div>
+	</body>
+</html>
